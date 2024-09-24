@@ -198,4 +198,10 @@ button:hover {
     margin-top: 0;
     border-radius: 0 0 5% 5%;
   }
+  .score-container1,
+  .score-container2,
+  .score-container3,
+  .score-container4 {
+    width: 400px;
+  }
 }/*# sourceMappingURL=styles.css.map */
