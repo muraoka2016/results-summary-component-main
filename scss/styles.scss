@@ -1,0 +1,185 @@
+$background-gradient: hsl(252, 100%, 67%);
+$background-gradient2: hsl(241, 81%, 54%);
+
+$circle1: hsla(256, 72%, 46%, 1);
+$circle2: hsla(241, 72%, 46%, 0);
+
+$reaction: hsl(0, 100%, 67%);
+$memory: hsl(39, 100%, 56%);
+$verbal: hsl(166, 100%, 37%);
+$visual: hsl(234, 85%, 45%);
+
+$font-white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lavender: hsl(241, 100%, 89%);
+$dark-gray-blue: hsl(224, 30%, 27%);
+
+@mixin centralizar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin font-p {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+@mixin container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  height: 50px;
+  margin: 20px 40px 0 40px;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding-top: 100px;
+}
+
+.container {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0;
+}
+
+.box1 {
+  @include centralizar();
+  background: linear-gradient($background-gradient, $background-gradient2);
+  width: 300px;
+  height: 400px;
+  border-radius: 5%;
+}
+.title1 {
+  @include font-p();
+  color: $light-lavender;
+  margin: 0 30px 0 30px;
+  padding-bottom: 20px;
+}
+.score {
+  background: linear-gradient($circle1, $circle2);
+  @include centralizar();
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 30px 0 30px;
+}
+h2 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 50px;
+  color: $font-white;
+  margin: 0 0 0 0;
+}
+.score-p {
+  @include font-p();
+  font-weight: 500;
+  color: $light-lavender;
+  margin: 0 auto 0 auto;
+}
+.score-p2 {
+  @include font-p();
+  font-weight: 500;
+  text-align: center;
+  color: $light-lavender;
+  margin: 20px 30px 0 30px;
+}
+
+.box2 {
+  @include centralizar();
+  background: white;
+  width: 300px;
+  height: 400px;
+  border-radius: 5%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.title2 {
+  @include font-p();
+  color: black;
+  text-align: left;
+  margin: 20px 30px 0 20px;
+  align-self: flex-start;
+}
+.score-container1 {
+  @include container();
+  background-color: hsla(0, 100%, 67%, 0.1);
+  color: $reaction;
+}
+.score-container2 {
+  @include container();
+  background-color: hsla(39, 100%, 56%, 0.1);
+  color: $memory;
+}
+.score-container3 {
+  @include container();
+  background-color: hsla(166, 100%, 37%, 0.1);
+  color: $verbal;
+}
+.score-container4 {
+  @include container();
+  background-color: hsla(234, 85%, 45%, 0.1);
+  color: $visual;
+}
+.score-t {
+  margin-left: 10px;
+}
+.score-text {
+  @include font-p();
+  color: lightgray;
+  text-align: right;
+  margin-left: auto;
+}
+span {
+  color: $dark-gray-blue;
+}
+button {
+  @include font-p();
+  color: white;
+  background-color: $dark-gray-blue;
+  width: 250px;
+  height: 50px;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: $visual;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    gap: 0;
+    padding-top: 0;
+  }
+  .box1,
+  .box2 {
+    width: 100%;
+  }
+  .box1 {
+    margin-top: 0;
+    border-radius: 0 0 5% 5%;
+  }
+
+  .score-container1,
+  .score-container2,
+  .score-container3,
+  .score-container4 {
+    width: 400px;
+  }
+}
